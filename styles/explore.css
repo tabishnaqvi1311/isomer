@@ -1,11 +1,6 @@
 main {
-    background-color: #181620;
     padding: 0 5rem;
-    height: fit-content;
-    background-image: url(/bg-explore.png);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    height: auto;
 }
 
 .title {
