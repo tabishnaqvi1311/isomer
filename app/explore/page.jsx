@@ -1,12 +1,11 @@
-import Navbar from '../../components/Navbar/Navbar';
-import Card from '../../components/card/card';
-import PCard from '../../components/profile/card';
+import Navbar from '@/components/Navbar/Navbar';
+import Card from '@/components/card/card';
+import PCard from '@/components/profile/card';
 import styles from '@/styles/explore.css';
 
-export default function page() {
+export default function Explore() {
     return (
         <main>
-            <Navbar />
             <div className='section'>
                 <div className='left'>
                     <h1 className='title'>POPULAR FUNDS</h1>
@@ -31,11 +30,11 @@ export default function page() {
                 </div>
                 <div className='right'>
                     <div className='profile-card'>
-                    {/* <h1 className='title'>Profile</h1> */}
+                        {/* <h1 className='title'>Profile</h1> */}
                         <div className='user'>
                             <img src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png" alt="" />
                         </div>
-                        <PCard/>
+                        <PCard />
                     </div>
                 </div>
             </div>
