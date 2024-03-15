@@ -7,7 +7,7 @@ import { connectToDatabase } from "@/utils/db";
 export const authOptions = {
     providers: [
         CredentialsProviders({
-            name: "Sign In",
+            name: "Credentials",
             credentials: {
                 email: {
                     label: "Email",
@@ -17,7 +17,7 @@ export const authOptions = {
                 password: {
                     label: "Password",
                     type: "password"
-                }
+                },
             },
             async authorize(credentials) {
 
@@ -28,17 +28,21 @@ export const authOptions = {
                 }
 
                 let user = await User.findOne({ email: credentials.email })
+
                 if (!user) {
                     const salt = await bcrypt.genSalt(10);
                     const hash = await bcrypt.hash(credentials.password, salt);
                     user = await User.create({
+                        
                         email: credentials.email,
                         password: hash,
+                        newAcc: true,
+                        role: "ENT"
                     });
-                    return user;
+                    return { ...user.toJSON(), newAcc: true };
                 }
 
-                const checkPass = bcrypt.compareSync(credentials.password, user.password);
+                const checkPass = await bcrypt.compare(credentials.password, user.password);
 
                 if (checkPass) {
                     return user;
