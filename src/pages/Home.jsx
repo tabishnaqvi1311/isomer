@@ -3,11 +3,12 @@ import { FaMoneyCheckAlt, FaUserFriends } from 'react-icons/fa'
 import { GrGrow } from "react-icons/gr";
 import { GiTurtle } from "react-icons/gi"
 
+
 const Home = () => {
     return (
         <div>
             <div className="flex items-center flex-col h-screen gap-5 mt-20 text-center">
-                <h1 className='text-white font-extrabold text-6xl text-'>CONNECT. INVEST. GROW.</h1>
+                <h1 className='text-white font-extrabold text-6xl'>CONNECT. INVEST. GROW.</h1>
                 <p className='text-xl text-white'>Invest in early stage startups and grow your wealth</p>
                 <img className="bg-1" src="/background1.jpg" alt="" />
             </div>

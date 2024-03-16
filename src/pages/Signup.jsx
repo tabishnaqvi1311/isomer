@@ -15,6 +15,7 @@ const Signup = () => {
     };
 
     const [data, setData] = useState(initialData);
+    const [error, setError] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -28,22 +29,23 @@ const Signup = () => {
         e.preventDefault();
         const uri = "http://localhost:8181/api/signup"
 
-        try {
-            const response = await fetch(uri, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            })
-            if(!response.ok) return;
-            const json = await response.json();
-            localStorage.setItem("auth-id", json.id);
-            window.location.href = "/dashboard"
 
-        }catch(e){
-            console.log(e);
-        }
+        const response = await fetch(uri, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        const json = await response.json();
+        if (!response.ok) {
+            setError(() => json);
+            return;
+        };
+        localStorage.setItem("auth-id", json.id);
+        window.location.href = "/dashboard"
+
+
 
     };
 
@@ -159,6 +161,7 @@ const Signup = () => {
                 </button>
             </form>
             <Link to="/login" className="text-gray-400 underline my-3">Have an account? Login</Link>
+            {error && <span>{error}</span>}
         </div>
     );
 };
