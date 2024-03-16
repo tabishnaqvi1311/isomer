@@ -33,7 +33,7 @@ export default function Navbar() {
                     localStorage.removeItem("auth-id");
                     window.location.reload();
                 }}>Logout</button>}
-                <Link to={"/profile"}><img src="https://img.freepik.com/premium-vector/woman-violet-hoodie-grey-circle-with-bright-orange-hairs-cute-girl-avatar-circle_630301-56.jpg?size=338&ext=jpg&ga=GA1.1.87170709.1707696000&semt=ais" alt='profile' height={50} width={50} className='rounded-full' /></Link>
+                {isAuth && <Link to={"/profile"}><img src="https://img.freepik.com/premium-vector/woman-violet-hoodie-grey-circle-with-bright-orange-hairs-cute-girl-avatar-circle_630301-56.jpg?size=338&ext=jpg&ga=GA1.1.87170709.1707696000&semt=ais" alt='profile' height={50} width={50} className='rounded-full' /></Link>}
             </div>
         </div >
     )
