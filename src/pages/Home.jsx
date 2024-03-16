@@ -1,5 +1,5 @@
-import React from 'react'
-import { FaMoneyCheckAlt, FaUserFriends } from 'react-icons/fa'
+import { FaUserFriends } from 'react-icons/fa'
+import { GrRestroomWomen } from "react-icons/gr";
 import { GrGrow } from "react-icons/gr";
 import { GiTurtle } from "react-icons/gi"
 
@@ -15,24 +15,24 @@ const Home = () => {
             <h1>Why FinFlow?</h1>
             <section className="cards">
                 <div className="card glass">
-                    <FaMoneyCheckAlt size={70} />
+                    <GrRestroomWomen size={70} />
                     <h1>Invest</h1>
-                    <p>Invest in early stage startups and grow your wealth</p>
+                    <p> Support and empower the women entrepreneurs in developing countries.</p>
                 </div>
                 <div className="card glass">
                     <FaUserFriends size={70} />
                     <h1>Connect</h1>
-                    <p>Connect with other investors and startups</p>
+                    <p>Explore opportunities to expand your market reach and connect with new customers and partners.</p>
                 </div>
                 <div className="card glass">
                     <GrGrow size={70} />
                     <h1>Grow</h1>
-                    <p>Grow your wealth and help startups grow</p>
+                    <p>Fuel innovation by investing in groundbreaking ideas and startups by women entrepreneurs.</p>
                 </div>
                 <div className="card glass">
                     <GiTurtle size={70} />
                     <h1>Learn</h1>
-                    <p>Learn from other investors and startups</p>
+                    <p>Mentorship programs for women that provide guidance from experienced professionals.</p>
                 </div>
             </section>
 
